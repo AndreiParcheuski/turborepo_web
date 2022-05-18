@@ -1,0 +1,18 @@
+{
+  "extends": "tsconfig/storyBook.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@stories/*": [
+        "stories/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

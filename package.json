@@ -1,0 +1,38 @@
+{
+  "name": "bein-gold-fe-web",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "./package.json": [
+      "sort-package-json"
+    ],
+    "apps/web/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/ui/components/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "commitizen": "^4.2.4",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1",
+    "sort-package-json": "^1.54.0",
+    "turbo": "latest"
+  },
+  "packageManager": "yarn@1.22.17",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  }
+}
