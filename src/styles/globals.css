@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bn-main-kingfisher-daisy: #5c2d91;
+}
+
+@layer base {
+  @font-face {
+    font-family: 'SFPro';
+    src: url('/fonts/SFPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'SFPro';
+    src: url('/fonts/SFPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham-Book.otf') format('opentype');
+    font-weight: 350;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Fira';
+    src: url('/fonts/FiraSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    /* IE and Edge */
+    -ms-overflow-style: none;
+
+    /* Firefox */
+    scrollbar-width: none;
+  }
+
+  /* Safari and Chrome */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-default {
+    /* IE and Edge */
+    -ms-overflow-style: auto;
+
+    /* Firefox */
+    scrollbar-width: auto;
+  }
+
+  /* Safari and Chrome */
+  .scrollbar-default::-webkit-scrollbar {
+    display: block;
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "extends": "tsconfig/ui.json",
-  "include": [
-    "components/**/*.tsx",
-    "components/**/*.ts"
-  ]
-}

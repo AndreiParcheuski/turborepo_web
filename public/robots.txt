@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Disallow: /disallowed
+
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://beingold-dev-main-website-app.azurewebsites.net/
+
+# Sitemaps
+Sitemap: https://beingold-dev-main-website-app.azurewebsites.net/sitemap.xml

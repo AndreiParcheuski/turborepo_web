@@ -1,34 +1,74 @@
 {
   "name": "bein-gold-fe-web",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
-    "prepare": "husky install"
+    "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "dev": "next dev --port 3000",
+    "export": "next export",
+    "format": "prettier --check --ignore-path .gitignore .",
+    "format:fix": "prettier --write --ignore-path .gitignore .",
+    "lint": "next lint",
+    "lint:fix": "eslint src --fix && yarn format",
+    "lint:strict": "eslint --max-warnings=0 src",
+    "prepare": "husky install",
+    "push-release": "git push --follow-tags origin main",
+    "start": "next start",
+    "typecheck": "tsc --noEmit --incremental false"
   },
   "lint-staged": {
     "./package.json": [
       "sort-package-json"
     ],
-    "apps/web/**/*.{js,ts,jsx,tsx}": [
-      "eslint --fix"
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0",
+      "prettier -w"
     ],
-    "packages/ui/components/**/*.{js,ts,jsx,tsx}": [
-      "eslint --fix"
+    "src/**/*.{json,css,scss,md}": [
+      "prettier -w"
     ]
   },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "next": "latest",
+    "next-redux-wrapper": "^7.0.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
+    "react-redux": "^8.0.1"
+  },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@next/eslint-plugin-next": "^12.1.6",
+    "@svgr/webpack": "^6.2.1",
+    "@tailwindcss/forms": "^0.5.2",
+    "@types/node": "^17.0.0",
+    "@types/react": "^18.0.8",
+    "@types/react-redux": "^7.1.18",
+    "@types/tailwindcss": "^3.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "autoprefixer": "^10.4.7",
+    "clsx": "^1.1.1",
     "commitizen": "^4.2.4",
+    "cssnano": "^5.1.11",
+    "eslint": "^8.5.0",
+    "eslint-config-next": "12.1.6",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.4.1",
+    "next-seo": "^5.4.0",
+    "next-sitemap": "^3.0.5",
+    "postcss": "^8.4.14",
+    "prettier": "2.6.2",
     "sort-package-json": "^1.54.0",
-    "turbo": "latest"
+    "tailwind-merge": "^1.2.1",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.5.4"
   },
   "packageManager": "yarn@1.22.17",
   "engines": {

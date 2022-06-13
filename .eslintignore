@@ -1,0 +1,9 @@
+/.yarn/**
+/lib/**
+/node_modules/**
+/tmp/**
+/build
+
+# next.js
+/.next/
+/out/
